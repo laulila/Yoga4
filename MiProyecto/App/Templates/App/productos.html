@@ -1,0 +1,54 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Productos
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <h1>Nuestros Productos: </h1> <br> <br> <br>
+{% for productos in producto %}
+    
+        <div class="container">
+            <table class="table table-hover">
+                <tbody>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre_Producto</th>
+                    <th scope="col">Marca_Producto</th>
+                    <tr class="table-warning text-center">
+                        <td>    {{ productos.id}}</td>
+                        <td>    {{productos.nombre_producto}}</td>
+                        <td>    {{ productos.marca_producto}}</td>
+                <tbody>
+            </table>     
+        </div>
+
+        <div class="container">
+            <button type="button" class="btn btn-outline-success">
+                <a href="{% url 'Crear productos' %}">Nuevo Producto</a>
+            </button> &nbsp; &nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-light">
+                <a href="{% url 'Buscar productos' %}">Buscar Producto</a>
+            </button> &nbsp; &nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-danger">
+                <a href="{% url 'Eliminar productos' productos_id=productos.id %}">Eliminar producto</a>
+            </button> &nbsp; &nbsp;&nbsp;
+            <button type="button" class="btn btn-outline-info">
+                <a href="{% url 'Actualizar productos' productos_id=productos.id %}">Actualizar producto</a>
+            </button>
+        </div>
+</div>
+    {% endfor %}
+
+{% endblock %}
+
+
+
+
+
+
+
+

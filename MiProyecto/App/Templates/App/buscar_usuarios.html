@@ -1,0 +1,43 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Buscar Usuarios
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <br> <br> <br>
+    <form action= "" method="get">
+
+        <input type="text" name="email_usuario" id="email_usuario" placeholder="buscar e-mail">
+        <br> <br> <br>
+        <input type="submit" value="Buscar email_usuario"class="btn btn-outline-light">
+
+    </form>
+    <br> <br> <br>
+    {% if usuario %}
+
+        
+        {% for usuarios in usuario %}
+            <table class="table table-hover">
+                <tbody>
+                    <th scope="col">Email</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre de Usuario</th>
+                    <tr class="table-info">
+                        <td> {{ usuarios.email_usuario}}</td>
+                        <td> {{ usuarios.id}}</td>
+                        <td> {{ usuarios.nombre_usuario}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        {% endfor %}
+    {% else %}
+    <h3>No hay datos</h3>
+    {% endif %}
+
+</div>
+{% endblock %}

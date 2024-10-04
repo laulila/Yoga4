@@ -1,0 +1,141 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Home Page
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+
+    <!-- Banner Principal -->
+    <div class="banner">
+        <h1>Welcome to Yoga Place!</h1>
+        <img src="{% static 'App/logo2.jpg' %}" alt="Imagen" class="logo">
+        <p>This is a practical place for a yogui.</p>  
+    </div>
+    <br><br>
+</div>
+
+<!-- Testimonios -->
+ <div id= "testimoniosCarousel" class="carousel slide" data-ride="carousel">
+     <div class="carousel-inner">
+         <div class="carousel-item active">
+             <div class="testimonio">
+                 <p>"Compre aquí y todos los productos son manufacturados. Los mats son de excelente calidad."</p>
+                 <p><strong> - Lore Debon</strong></p>
+             </div>
+         </div>
+         <div class="carousel-item">
+             <div class="testimonio">
+                     <p>"El precio es muy bueno y el trato es personalizado."</p>
+                     <p><strong>- Maca Renat</strong></p>
+                 </div>
+             </div>
+             <div class="carousel-item">
+                 <div class="testimonio">
+                     <p>"Los precios son bajos y los productos son ecofriendly, recomendado."</p>
+                     <p><strong> - Corina Lopez </strong></p>
+                 </div>
+             </div>
+             <div class="carousel-item">
+                 <div class="testimonio">
+                     <p>"Los productos son lo más recomendado por los maestros del yoga, gracias por su excelente atención."</p>
+                     <p><strong> - Catalina Ador</strong></p>
+                 </div>
+             </div>
+         </div>
+         <a class="carousel-control-prev" href="#testimoniosCarousel" role="button" data-slide="prev">
+             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+             <span class="sr-only">Anterior</span>
+         </a>
+         <a class="carousel-control-next" href="#testimoniosCarousel" role="button" data-slide="next">
+             <span class="carousel-control-next-icon" aria-hidden="true"></span>
+             <span class="sr-only">Siguiente</span>
+         </a>
+     </div>
+     <br><br>
+
+
+      <!-- Ofertas exclusivas -->
+ <div class="cta mt-5 text center">
+     <h2>Ofertas exclusivas,  solo para ti</h2>
+ </div>
+ <div id="ofertasCarousel" class="carousel slide" data-ride="carousel">
+     <div class="carousel-inner">
+         <div class="carousel-item active">
+             <div class="oferta">
+                <p>20% de descuento en articulos seleccionados!</p>
+            </div>
+        </div>
+         <div class="carousel-item">
+             <div class="oferta">
+                 <p>15% de descuento en productos de la categoría de accesorios.</p>
+             </div>
+         </div>
+         <div class="carousel-item">
+             <div class="oferta">
+                 <p>10% de descuento en productos de la categoría de entrenamiento.</p>
+             </div>
+         </div>
+         <div class="carousel-item">
+             <div class="oferta">
+                 <p>12% de descuento en productos de la categoría de cuidado personal.</p>
+             </div>
+         </div>
+     </div>
+     <a class="carousel-control-prev" href="#ofertasCarousel" role="button" data-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="sr-only">Anterior</span>
+     </a>
+     <a class="carousel-control-next" href="#ofertasCarousel" role="button" data-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="sr-only">Siguiente</span>
+     </a>
+ </div>
+ <br><br>
+ </div>
+ <!-- jQuery y Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" ></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+     $('.carousel').carousel({
+         interval: 4000
+     })
+  </script>
+
+<!--Nuestras Marcas -->
+<div class= "marcas mt-5">
+    <h2>Nuestras Marcas</h2>
+    <div class="row">
+        <div class="col-md-2">
+            <img src="{% static 'App/marca1.png' %}" alt="Marca 1" class="img-fluid">
+            </div> &nbsp;  &nbsp;&nbsp;
+            <div class="col-md-2">
+                <img src="{% static 'App/marca2.jpeg' %}" alt="Marca 2" class="img-fluid">     
+            </div> &nbsp;  &nbsp;&nbsp;
+            <div class="col-md-2">
+                <img src="{% static 'App/marca3.jpeg' %}" alt="Marca 3" class="img-fluid">     
+            </div> &nbsp;  &nbsp;&nbsp;
+            <div class="col-md-2">
+                <img src="{% static 'App/marca4.png' %}" alt="Marca 4" class="img-fluid">     
+            </div> &nbsp;  &nbsp;&nbsp;
+            <div class="col-md-2">
+                <img src="{% static 'App/marca5.png' %}" alt="Marca 5" class="img-fluid">     
+            </div> 
+        </div>
+    </div>
+    <br><br>
+
+
+
+                 
+     
+
+            
+             
+{% endblock %}

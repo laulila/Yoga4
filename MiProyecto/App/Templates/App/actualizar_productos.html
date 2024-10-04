@@ -1,0 +1,25 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Actualizar Productos
+{% endblock title %}
+
+{% block codigoDinamico %}
+
+<div class="container">
+    <form action="" method="post">{% csrf_token %}
+        <br> <br> <br> 
+        <h1>Actualizar un Producto</h1><br> <br> <br>
+
+        <table>
+            {{form.as_table}}
+        </table> <br> <br>
+        <div class="container">
+            <button type="submit" class="btn btn-info">Actualizar Productos</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://bootswatch.com/5/quartz/bootstrap.min.css" rel="stylesheet"/>
+    <link href="{% static 'App/styles.css' %}" rel="stylesheet" />
+    <link rel="icon" href="{% static 'App/favicon.jpg' %}">
+    <title>
+        {% block title %} 
+        
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'Home' %}">Home
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Registro' %}">Registrarse</a>
+              </li>
+              {% if request.user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Productos' %}">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'Usuarios' %}">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'Ventas_detalles' %}">Ventas_detalles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+    {% if request.user.is_authenticated %}
+    <h2>Hola, {{ user.username }}!</h2>
+         <a href="{% url 'logout' %}">Cerrar sesión</a>
+     {% else %}
+         <h2>No has iniciado sesión. <a href="{% url 'login' %}">Inicia sesión aquí</a></h2>
+     {% endif %}
+    </div><br><br><br>     
+  {% block codigoDinamico %}
+
+  {% endblock %}
+    </div>
+</body>
+</html>

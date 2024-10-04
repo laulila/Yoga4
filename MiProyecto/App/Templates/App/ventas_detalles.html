@@ -1,0 +1,55 @@
+{% extends 'App/base.html' %}
+{% load static %}
+{% block title %}
+    Ventas-detalles
+{% endblock title %}
+{% block codigoDinamico %}
+<div class="container">
+    <h1> Ventas_detalles: </h1> <br> <br> <br>
+{% for ventas_detalles in venta_detalle %}
+        <div class="container">
+            <table class="table table-hover">
+                <tbody>
+                    <th scope="col">Id</th>
+                    <th scope="col">Monto</th>
+                    <th scope="col">Fecha_venta</th>
+                    <th scope="col">Forma_de_pago</th>
+                    <th scope="col">producto</th>
+                    <th scope="col">usuario</th>
+                    <tr class="table-warning">
+                        <td>  {{ ventas_detalles.id}}</td>
+                        <td> ${{ ventas_detalles.monto}}</td>
+                        <td>  {{ ventas_detalles.fecha_venta}}</td>
+                        <td>  {{ ventas_detalles.forma_de_pago}}</td>
+                        <td>  {{ ventas_detalles.producto}}</td>
+                        <td>  {{ ventas_detalles.usuario}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="container">
+                <button type="button" class="btn btn-outline-success">
+                    <a href="{% url 'Crear Ventas_detalles' %}">Nuevo Ventas_detalles</a>
+                </button>&nbsp; &nbsp; &nbsp; 
+                <button type="button" class="btn btn-outline-light">        
+                    <a href="{% url 'Buscar ventas_detalles' %}">Buscar Ventas_detalles</a>  
+                </button> &nbsp; &nbsp; &nbsp;          
+                <button type="button" class="btn btn-outline-danger">
+                    <a href="{% url 'Eliminar Ventas_detalles' ventas_detalles_id=ventas_detalles.id %}">Eliminar Ventas detalles</a>         
+                </button> &nbsp; &nbsp; &nbsp;
+                <button type="button" class="btn btn-outline-info">
+                    <a href="{% url 'Actualizar Ventas detalles' ventas_detalles_id=ventas_detalles.id %}">Actualizar Ventas detalles</a>
+                </button>  
+                </div>
+        </div>       
+    {% endfor %}
+</div>
+{% endblock %}
+            
+            
+            
+            
+            
+            
+            
+
+

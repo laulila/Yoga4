@@ -1,0 +1,38 @@
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-container form {
+    width: 100%;
+    max-width: 400px;   
+}
+
+.banner {
+    text-align: center;
+    background-color: blueviolet;
+    padding: 20px;
+}
+
+.testimonio {
+    text-align: center;
+    font-style: italic;
+    margin: 20px 0;
+    background-color: black;
+
+}
+
+.carousel-item {
+    padding: 20px;
+}
+
+.oferta {
+    text-align: center;
+    font-weight: bold;
+    background-color: black;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
