@@ -1,3 +1,4 @@
+<!-- base.html -->
 {% load static %}
 
 <!DOCTYPE html>
@@ -58,9 +59,10 @@
          <h2>No has iniciado sesión. <a href="{% url 'login' %}">Inicia sesión aquí</a></h2>
      {% endif %}
     </div><br><br><br>     
-  {% block codigoDinamico %}
+    <div class="container">
+        {% block codigoDinamico %}
 
-  {% endblock %}
+        {% endblock %}
     </div>
 </body>
 </html>
