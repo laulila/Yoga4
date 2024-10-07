@@ -4,11 +4,17 @@ from .forms import crear_Usuarios_forms, crear_Productos_forms, crear_Ventas_det
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.forms import AuthenticationForm
+from django.template.loader import render_to_string
+from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib import admin
 
 def mostrar_index(request):
+    
     return render(request, 'App/index.html')
 
 def mostrar_productos(request):
+    
     productos = Productos.objects.all()
     context = {'productos': productos}
     return render(request, 'App/productos.html', context)
@@ -29,7 +35,7 @@ def crear_Usuarios(request):
         
         if form.is_valid():
             
-            formulario_limpio =form.cleanes_data
+            formulario_limpio =form.cleaned_data
             
             usuarios = Usuarios(nombre_usuario=formulario_limpio['nombre_usuario'],email_usuario=formulario_limpio['email_usuario'])
             
@@ -110,10 +116,7 @@ def buscar_forma_de_pago(request):
         respuesta = 'No hay datos'
     return render (request, 'App/buscar_ventas_detalles.html', {'respuesta': respuesta})
 
-    forma_de_pago = request.GET.get('forma_de_pago', '')
-    ventas_detalles = Ventas_detalles.objects.filter(forma_de_pago__icontains=forma_de_pago)
-    return render(request, 'App/buscar_ventas_detalles.html', {'ventas_detalles': ventas_detalles})
-
+    
 def eliminar_productos(request, productos_id):
     
     productos = Productos.objects.get(id=productos_id)
@@ -247,8 +250,43 @@ def logout_request(request):
     logout(request)
     return render(request, "App/index.html", {"mensaje":"Has cerrado sesión exitosamente."})
     
-    
+def privacy_policy(request):
+     return render(request, "App/privacy_policy.html")
 
+def terms_conditions(request):
+     return render(request, "App/terms_conditions.html")
+ 
+def contacto(request):
+     if request.method == 'POST':
+         nombre = request.POST.get('nombre')
+         email = request.POST.get('email')
+         mensaje = request.POST.get('mensaje')
+         
+         if nombre and email and mensaje:
+             #guardar el mensaje en base de datos
+             MensajeContacto.objects.create(
+                 nombre=nombre,
+                 email=email,
+                 mensaje=mensaje,
+             )
+             
+             #enviar confirmacion al usuario
+             send_mail(
+                 'Gracias por contactarnos',
+                 f'Hola{nombre}, hemos recibido tu mensaje y te contactaremos a la brevedad',
+                 settings.DEFAULT_FROM_EMAIL,
+                 [email]
+             )
+             
+             messages.success(request, 'Mensaje enviado exitosamente.')
+             return ('pagina_de_gracias')
+         else:
+             messages.error(request, 'Por favor, completa todos los campos.')
+     return render(request, 'App/contacto.html')
+             
+             
+                 
+                 
 
 
 

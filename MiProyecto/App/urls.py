@@ -21,6 +21,10 @@ urlpatterns = [
     path('registro/', views.registro_usuario, name='Registro'),
     path('login/', views.login_request, name='login'),
     path('logout/', views.logout_request, name='logout'),
+    path('privacy-policy/', views.privacy_policy, name='privacy_policy'),
+    path('terms-conditions/', views.terms_conditions, name='terms_conditions'),
+    
+         
 ]
 
 # ... Add more URLs as needed.
