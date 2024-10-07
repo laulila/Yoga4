@@ -98,15 +98,20 @@
  <br><br>
  </div>
  <!-- jQuery y Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" ></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" ></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-  <script>
-     $('.carousel').carousel({
+<script>
+  $('.carousel').carousel({
          interval: 4000
      })
-  </script>
+</script>
+
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+</div>
 
 <!--Nuestras Marcas -->
 <div class= "marcas mt-5">
@@ -130,6 +135,121 @@
         </div>
     </div>
     <br><br>
+
+    <!-- Como funciona? -->
+     <div class="como-funciona mt-5">
+         <h2> class="text-center mb-4"> Como funciona?</h2>
+         <div class="row text-center">
+             <div class="col-md-4">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body paso bg-primary text-white rounded">
+                        <h3 class="card-title">1. Busca tu producto</h3>
+                        <p class="card-text">Utiliza nuestro buscador o navega por las categorias para encontrar el producto de tu elección.</p>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4">
+                 <div class="card h-100 shadow-lg">
+                     <div class="card-body paso bg-success text-white rounded">
+                         <h3 class="card-title">2. Compra y recibe</h3>
+                         <p class="card-text">Compra el producto que deseas</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="card h-100 shadow-lg">
+                     <div class="card-body paso bg-danger text-white rounded">
+                         <h3 class="card-title">3. Recibe tu pedido</h3>
+                         <p class="card-text"> Envío rápido a tu casa o domicilio del ashran.</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <br> <br>  <br>
+     <!-- Preguntas Frecuentes -->
+     <div class="faq mt-5">
+         <h2> Preguntas Frecuentes</h2>
+         <div id="accordion">
+             <div class="card">
+                 <div class="card-header" id="headingOne">
+                     <h5 class= "mb-0">
+                         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                             ¿Cómo puedo devolver un  producto?
+                         </button>
+                     </h5>
+                 </div>
+
+                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                     <div class="card-body">
+                         Puedes devolver el producto a la tienda, en un plazo máximo de 30 días hábiles desde la fecha de entrega. Debes presentar el producto con la etiqueta original y el código de barras.
+                     </div>
+                 </div>
+             </div>
+             <div class="card">
+                 <div class="card-header" id="headingTwo">
+                     <h5 class="mb-0">
+                         <button class="btn btn-link data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"aria-controls="collapseTwo">
+                              Cuáles son los métodos de pago aceptados?
+                         </button>
+                     </h5>
+                 </div>
+                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                     <div class="card-body">
+                         Nuestro sitio acepta todos los medios de pago
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br> <br>  <br>
+
+   <!-- Mapa-->
+     <div class="contacto mt-5">
+         <h2>Encuentranos</h2>
+
+            <div class="row">
+                 <div class="col-md-6">
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3039.7445
+                     width="800" height="600"
+                     style="border:0;" 
+                     allowfullscreen="" 
+                     loading="lazy">
+                     referrerpolicy="no-referrer-when-downgrade"
+                 </iframe>
+                 </div>
+
+   </div>
+
+   <footer class="mt-5">
+     <div class="row">
+         <div class="col-md-4">
+             <h5>Yoga Elementos</h5>
+             <p>Encuentra tu elemento de ayuda para la practica de yoga.</p>
+         </div>
+         <div class="col-md-4">
+             <h5>Enlaces Rápidos</h5>
+             <ul>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Términos y Condiciones</a></li>
+                <p>&copy; <span id="currentYear"></span>Yoga Elementos. Todos los derechos reservados.</p>
+             <ul>
+         </div>
+         <div class="col-md-4">
+             <h5>Redes Sociales</h5>
+             <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+             <ul>
+         </div>
+      </div>
+    </footer>
+  
+
+         
+                 
+                    
+
 
 
 
