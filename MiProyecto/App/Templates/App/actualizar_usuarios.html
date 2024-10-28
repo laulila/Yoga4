@@ -8,10 +8,11 @@
 
 {% block codigoDinamico %}
 
+
 <div class="container">
     <form action="" method="post">{% csrf_token %}
         <br> <br> <br> 
-        <h1>Crear un nuevo usuario</h1>  <br>  <br> <br> 
+        <h1>Crear   un  nuevo usuario</h1>  <br>  <br> <br> 
         <table>
             {{ form.as_table }}
         </table> 
@@ -21,4 +22,6 @@
         </div>
     </form>
 </div>
+
+
 {% endblock %}

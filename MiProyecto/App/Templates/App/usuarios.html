@@ -1,11 +1,8 @@
 {% extends 'App/base.html' %}
-
 {% load static %}
-
 {% block title %}
     usuarios
 {% endblock title %}
-
 {% block codigoDinamico %}
 <div class="container">
     <h1>Usuarios: </h1> <br> <br> <br>
@@ -16,7 +13,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Nombre de Usuario</th>
                 <th scope="col">Email</th>
-                <tr class="table-warning text-center">
+                <tr class="table-warning">
                     <td> {{ usuario.id}}</td>
                     <td> {{ usuario.nombre_usuario}}</td>
                     <td> {{ usuario.email_usuario}}</td>

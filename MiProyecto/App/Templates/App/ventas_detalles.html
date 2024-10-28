@@ -34,15 +34,16 @@
                     <a href="{% url 'Buscar ventas_detalles' %}">Buscar Ventas_detalles</a>  
                 </button> &nbsp; &nbsp; &nbsp;          
                 <button type="button" class="btn btn-outline-danger">
-                    <a href="{% url 'Eliminar Ventas_detalles' ventas_detalles_id=ventas_detalles.id %}">Eliminar Ventas detalles</a>         
+                    <a href="{% url 'Eliminar Ventas detalles' ventas_detalles_id=ventas_detalles.id %}">Eliminar Ventas detalles</a>         
                 </button> &nbsp; &nbsp; &nbsp;
                 <button type="button" class="btn btn-outline-info">
                     <a href="{% url 'Actualizar Ventas detalles' ventas_detalles_id=ventas_detalles.id %}">Actualizar Ventas detalles</a>
-                </button>  
-                </div>
-        </div>       
+                </button> 
+            </div> 
+        </div>
+    </div>       
     {% endfor %}
-</div>
+
 {% endblock %}
             
             

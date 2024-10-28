@@ -1,9 +1,13 @@
 {% extends 'App/base.html'%}
 
+
 {% load static %}
 
+
 {% block title %}
+
     Buscar Producto
+
 {% endblock title %}
 
 {% block codigoDinamico %}
@@ -11,6 +15,7 @@
 <div class="container">
     <br> <br> <br>
     <form action= "" method="get">
+
    
         <input type="text" name="marca_producto" id="marca_producto" placeholder="buscar marca_producto">
         <br> <br> <br>
@@ -18,23 +23,24 @@
 
     </form>
     <br> <br> <br>
+    
     {% if Producto %}
 
-        {% for productos in Producto %}
+        {%  for productos in Producto %}
         <table class="table table-hover">
-            <tbody>
-                <th scope="col">Marca_Producto</th>
-                <th scope="col">Id</th>
-                <th scope="col">Nombre_Producto</th>
-                <tr class="table-info">
-                    <td> {{ productos.marca_producto}}</td>
-                    <td> {{ productos.id}}</td>
-                    <td> {{ productos.nombre_producto}}</td>
-            </tbody>
-        </table>
-        {% endfor %}
+        <tbody>
+            <th scope="col">Marca_Producto</th>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre_Producto</th>
+            <tr class="table-info">
+                <td>{{ productos.marca_producto }}</td>
+                <td>{{ productos.id }}</td>
+                <td>{{ productos.nombre_producto }}</td>
+           </tbody>
+       </table>
+       {% endfor  %} 
 
-    {% else %}
+   {% else %}
 
         <h3>No hay datos</h3>
     {% endif %}

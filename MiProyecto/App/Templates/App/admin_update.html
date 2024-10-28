@@ -1,0 +1,17 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}
+   Login
+{% endblock title %}
+
+{% block codigoDinamico %}
+    <form method="post">{% csrf_token %}
+
+        {{form|crispy}}
+        <input type="submit" value="Enviar">
+    </form>
+{% endblock %}

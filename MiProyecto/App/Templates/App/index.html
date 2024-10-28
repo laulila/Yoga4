@@ -1,5 +1,4 @@
 {% extends 'App/base.html' %}
-
 {% load static %}
 
 {% block title %}
@@ -9,11 +8,14 @@
 {% block codigoDinamico %}
 
 <div class="container">
+    <h1>💜Bienvenido a YogaPlace!</h1>
+</div>
+
 
     <!-- Banner Principal -->
     <div class="banner">
-        <h1>Welcome to YogaPlace!</h1>
-        <img src="{% static 'App/logo2.jpg' %}" alt="Imagen" class="logo">
+        <h1>💜Welcome to YogaPlace!</h1>
+        <img src="{% static 'App/yoga-159810_1280.webp' %}" alt="Imagen" class="logo">
         <p>Here you are a Practical Place for a vital yogui.</p>  
     </div>
     <br><br>
@@ -115,22 +117,27 @@
 
 <!--Nuestras Marcas -->
 <div class= "marcas mt-5">
-    <h2>Nuestras Marcas</h2>
+    <h2>NUESTRAS MARCAS DE PRESTIGIO INTERNACIONAL</h2>
     <div class="row">
         <div class="col-md-2">
-            <img src="{% static 'App/marca1.png' %}" alt="Marca 1" class="img-fluid">
+            <img src="{% static 'App/marca1.webp' %}" alt="Marca 1" class="img-fluid">
+            <p> <br>  🧘🏾‍♀️-I N D I A N-🕉️
+        </div> &nbsp;  &nbsp;&nbsp;
+            <div class="col-md-2">
+                <img src="{% static 'App/marca2.webp' %}" alt="Marca 2" class="img-fluid">     
+                <P> <br> 🌈-VANILLA INDIAN-🌈
             </div> &nbsp;  &nbsp;&nbsp;
             <div class="col-md-2">
-                <img src="{% static 'App/marca2.jpeg' %}" alt="Marca 2" class="img-fluid">     
+                <img src="{% static 'App/marca3.jpg' %}" alt="Marca 3" class="img-fluid">     
+                <p> <br>  -PRIMAVERA-🤍🩵💙💜🩷🧡
             </div> &nbsp;  &nbsp;&nbsp;
             <div class="col-md-2">
-                <img src="{% static 'App/marca3.jpeg' %}" alt="Marca 3" class="img-fluid">     
+                <img src="{% static 'App/marca4.webp' %}" alt="Marca 4" class="img-fluid">     
+                <p>  <br>-TRIGO SARRACENO-🕎
             </div> &nbsp;  &nbsp;&nbsp;
             <div class="col-md-2">
-                <img src="{% static 'App/marca4.png' %}" alt="Marca 4" class="img-fluid">     
-            </div> &nbsp;  &nbsp;&nbsp;
-            <div class="col-md-2">
-                <img src="{% static 'App/marca5.png' %}" alt="Marca 5" class="img-fluid">     
+                <img src="{% static 'App/marca5.jpg' %}" alt="Marca 5" class="img-fluid">  
+            <p>   <br> -INDIAN FLOR-🌸🌻🌷🌺
             </div> 
         </div>
     </div>
@@ -138,7 +145,7 @@
 
     <!-- Como funciona? -->
      <div class="como-funciona mt-5">
-         <h2> class="text-center mb-4"> Como funciona?</h2>
+         <h2 class="text-center mb-4">Cómo funciona?</h2>
          <div class="row text-center">
              <div class="col-md-4">
                 <div class="card h-100 shadow-lg">
@@ -151,8 +158,8 @@
              <div class="col-md-4">
                  <div class="card h-100 shadow-lg">
                      <div class="card-body paso bg-success text-white rounded">
-                         <h3 class="card-title">2. Compra y recibe</h3>
-                         <p class="card-text">Compra el producto que deseas</p>
+                         <h3 class="card-title">2. Realiza tu compra</h3>
+                         <p class="card-text">Seleccionando el producto que deseas y el medio de pago, podrás realizar tu compra en forma segura</p>
                      </div>
                  </div>
              </div>
@@ -160,7 +167,7 @@
                  <div class="card h-100 shadow-lg">
                      <div class="card-body paso bg-danger text-white rounded">
                          <h3 class="card-title">3. Recibe tu pedido</h3>
-                         <p class="card-text"> Envío rápido a tu casa o domicilio del ashran.</p>
+                         <p class="card-text"> Envío rápido a tu casa o domicilio del Ashran.</p>
                      </div>
                  </div>
              </div>
@@ -189,7 +196,7 @@
              <div class="card">
                  <div class="card-header" id="headingTwo">
                      <h5 class="mb-0">
-                         <button class="btn btn-link data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"aria-controls="collapseTwo">
+                         <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"aria-controls="collapseTwo">
                               Cuáles son los métodos de pago aceptados?
                          </button>
                      </h5>
@@ -205,50 +212,57 @@
     <br> <br>  <br>
 
    <!-- Mapa-->
-     <div class="contacto mt-5">
-         <h2>Encuentranos</h2>
+     <div class="contacto mt-5">  
+         <h2>DÓNDE ESTAMOS?</h2>
 
-            <div class="row">
-                 <div class="col-md-6">
-                 
-
-                     <iframe src="https://www.google.com.ar/maps/place/Av.+Gral.+San+Mart%C3%ADn+319,+B1704+Ramos+Mej%C3%ADa,+Provincia+de+Buenos+Aires/@-34.644814,-58.5633442,17z/data=!3m1!4b1!4m5!3m4!1s0x95bcc7e6ca407621:0xaed5b5b036e77238!8m2!3d-34.6448184!4d-58.5607693?entry=ttu&g_ep=EgoyMDI0MTAwMi4xIKXMDSoASAFQAw%3D%3D#:~:text=when%2Ddowngrade%22%3E%3C/iframe%3E-,COPIAR,-HTML
-                     width="800" height="600"
+         <div class="row">
+             <div class="col-md-6">   
+                 <iframe 
+                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31511.22255457356!2d-58.5633442!3d-34.644814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc7e6ca407621%3A0xaed5b5b036e77238!2sAv.%20Gral.%20San%20Mart%C3%ADn%20319%2C%20B1704%20Ramos%20Mej%C3%ADa%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1634991962579!5m2!1ses-419!2sar" 
+                     width="800" height="600" 
                      style="border:0;" 
                      allowfullscreen="" 
                      loading="lazy">
-                     referrerpolicy="no-referrer-when-downgrade"
                  </iframe>
-                 </div>
+             </div>
+            </div>
+ </div>
 
-   </div>
+          <div class=" contacto mt-5">
+              <div class="row mt-4">
+                  <div class="col-md-12">
+                      <h3> Comunícate con nosotros☺︎</h3>
 
-   <footer class="mt-5">
-     <div class="row">
-         <div class="col-md-4">
-             <h5>Yoga Elementos</h5>
-             <p>Encuentra tu elemento de ayuda para la practica de yoga.</p>
-         </div>
-         <div class="col-md-4">
-             <h5>Enlaces Rápidos</h5>
-             <ul>
-                <li><a href="#">Política de Privacidad</a></li>
-                <li><a href="#">Términos y Condiciones</a></li>
-                <p>&copy; <span id="currentYear"></span>Yoga Elementos. Todos los derechos reservados.</p>
-             <ul>
-         </div>
-         <div class="col-md-4">
-             <h5>Redes Sociales</h5>
-             <ul>
-                <li><a href="#">Facebook</a></li>
-                <li><a href="#">Instagram</a></li>
-             <ul>
-         </div>
-      </div>
-    <footer>
+                      <form action="{% url 'contacto' %}" method="post">
+                          {% csrf_token %}
+                          <div class="form-group">
+                              <label for="nombre">     Nombre:</label>
+                              <input type="text" class="form-control" id="nombre" name="nombre" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="email">    Email:</label>
+                              <input type="email" class="form-control" id="email" name="email" required>
+                          </div>
+                          <div class="form-group">
+                              <label for="asunto"> Asunto:</label>
+                               <textarea class="form-control" id="asunto" name="asunto" rows="3"required></textarea>
+                          </div>
+                          <div class="form-group">
+                              <label for="mensaje"> Mensaje:</label>  
+                              <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
+                          </div>
+                          <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                      </form>
 
-  
+                   </div>
+               </div>
+           </div>
+  </div>
 
+</div>
+                              
+
+                        
          
                  
                     

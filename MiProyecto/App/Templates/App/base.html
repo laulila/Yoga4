@@ -8,16 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://bootswatch.com/5/quartz/bootstrap.min.css" rel="stylesheet"/>
     <link href="{% static 'App/styles.css' %}" rel="stylesheet" />
-    <link rel="icon" href="{% static 'App/favicon.jpg' %}">
+    <link href="{% static 'App/bootstrap.css' %}" rel="stylesheet" />
+    <link rel="icon" href="{% static 'App/favicon.webp' %}">
     <title>
         {% block title %} 
         
-        {% endblock %}
+        {% endblock title %}
     </title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
         <div class="container-fluid">
+          <a class="navbar-brand" href="#">🕉️YogaPlace</a>
+
+
           <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
@@ -27,68 +31,67 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'Registro' %}">Registrarse</a>
-              </li>
-              {% if request.user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'Productos' %}">Productos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'Usuarios' %}">Usuarios</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="{% url 'Ventas_detalles' %}">Ventas_detalles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
-                    </li>
-                    {% endif %}
-                </ul>
+                </li>
+                {% if request.user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'Productos' %}">Productos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'Usuarios' %}">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'Ventas_detalles' %}">Ventas_detalles</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+                {% endif %}
+              </ul>
             </div>
-        </div>-
-    </nav>
+          </div>
+        </nav>
+        <div class="container">
+        {% if request.user.is_authenticated %}
+        <h2> Hola, {{user.username}}!</h2>
+             <a href="{% url 'logout' %}">Cerrar sesión</a>
+             {% else %}
+                 <h2>🧘🏿No has iniciado sesión. <a href="{% url 'login' %}">Inicia sesión aquí</a>
+             {% endif %}
+                </div><br> <br> <br>
+              {% block codigoDinamico %}
 
-    <div class="container">
-    {% if request.user.is_authenticated %}
-    <h2>Hola, {{ user.username }}!</h2>
-         <a href="{% url 'logout' %}">Cerrar sesión</a>
-     {% else %}
-         <h2>No has iniciado sesión. <a href="{% url 'login' %}">Inicia sesión aquí</a></h2>
-     {% endif %}
-    </div><br><br><br>     
-    <div class="container">
-        {% block codigoDinamico %}
+              {% endblock %}
 
-        {% endblock %}
-    </div>
-</body>
-</html>
+
+ <!-- pie de pagina-->
 <footer class="mt-5">
   <div class="row">
-      <div class="col-md-4">
-          <h5>YogaPlace</h5>
-          <p>Encuentra tu elemento de ayuda para la practica de yoga.</p>
-      </div>
-      <div class="col-md-4">
-         <h5>Enlaces Rápidos</h5>
-          <ul> 
-          class="list-unstyled">
-              <li><a href="{% url 'privacy_policy' %}">Política  de Privacidad,</a></li>
-              <li><a href="{% url  'terms_conditions' %}">Términos y Condiciones</a></li>
-              <p>&copy; <span id="currentYear"></span> Yoga Elementos. Todos los derechos reservados.</p>    
-          </ul>
-      </div>
-      <div class="col-md-4">
-         <h5>Redes Sociales</h5>
-          <ul>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Instagram</a></li>
-          </ul>
-      </div>
-  </div>
+    <div class="col-md-4">
+        <h5>Enlaces Rápidos</h5>
+        <ul>
+            <li><a href="{% url 'privacy_policy' %}">Política de Privacidad</a></li>
+            <li><a href="{% url 'terms_conditions' %}">Términos y Condiciones</a></li>
+            <p>&copy; <span id="currentYear"></span> Yoga Elementos. Todos los derechos reservados. ® by Laura Pereyra</p>
+        </ul>
+    </div>
+    <div class="col-md-4">
+        <h5>Redes Sociales</h5>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+        </ul>
+    </div>
+</div>
+</footer>
+
+</body>
+
+</html>
+                
 
 
 

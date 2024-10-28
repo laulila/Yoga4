@@ -1,0 +1,25 @@
+{% extends 'App/base.html' %}
+
+{% load static %}
+
+{% block title %}
+    contacto
+{% endblock title %}
+
+{% block codigoDinamico %}
+<script>
+    {% if messages %}
+        {% for message in messages %}
+            {% if message.tags == 'success' %}
+            toastr.success('{{ message }}');
+            {% elif message.tags == 'error' %}
+                toastr.error('{{ message }}');
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+    </script>
+
+    {% url 'listar_mensajes' %}
+    {% endblock %}
+    
+
